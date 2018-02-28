@@ -1,0 +1,46 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="unityloader.html">
+
+<dom-module id="unityelementdev-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+    <div id="gameContainer" >
+      Here is the content - with any luck 
+    </div>
+
+<paper-button raised on-click="_openunity">(click please)</paper-button>
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class UnityelementdevApp extends Polymer.Element {
+      static get is() { return 'unityelementdev-app'; }
+
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'unityelementdev-app'
+          }
+        };
+      }
+      _openunity() {
+        console.log('Opening Unity now');
+        // it would seem that es6-bundled builds are now working!?!?!?
+        UnityLoader.instantiate(this.$.gameContainer, "/UnityBuilt/polymer-unityloader.json");
+      }
+    }
+
+    window.customElements.define(UnityelementdevApp.is, UnityelementdevApp);
+  </script>
+</dom-module>

@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "polymer-unityloader.data.unityweb",
+"asmCodeUrl": "polymer-unityloader.asm.code.unityweb",
+"asmMemoryUrl": "polymer-unityloader.asm.memory.unityweb",
+"asmFrameworkUrl": "polymer-unityloader.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

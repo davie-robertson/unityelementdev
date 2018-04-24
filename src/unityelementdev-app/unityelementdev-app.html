@@ -1,5 +1,4 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="unityloader.html">
 
 <dom-module id="unityelementdev-app">
@@ -9,12 +8,11 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
-    <div id="gameContainer" >
-      Here is the content - with any luck 
+
+    <div id="gameContainer">
+      <slot></slot>
     </div>
 
-<paper-button raised on-click="_openunity">(click please)</paper-button>
 
   </template>
 
@@ -28,16 +26,19 @@
 
       static get properties() {
         return {
-          prop1: {
+          unityContent: {
             type: String,
             value: 'unityelementdev-app'
+            
+            
           }
         };
       }
-      _openunity() {
+      ready() {
+        super.ready();
         console.log('Opening Unity now');
         // it would seem that es6-bundled builds are now working!?!?!?
-        UnityLoader.instantiate(this.$.gameContainer, "/UnityBuilt/polymer-unityloader.json");
+        UnityLoader.instantiate(this.$.gameContainer, this.unityContent);
       }
     }
 

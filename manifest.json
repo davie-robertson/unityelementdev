@@ -1,6 +1,6 @@
 {
-  "name": "unityelementdev",
-  "short_name": "unityelementdev",
+  "name": "unity-player",
+  "short_name": "unityplayer",
   "start_url": "/",
   "display": "standalone"
 }

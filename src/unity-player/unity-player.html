@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="unityloader.html">
 
-<dom-module id="unityelementdev-app">
+<dom-module id="unity-player">
   <template>
     <style>
       :host {
@@ -21,14 +21,14 @@
      * @customElement
      * @polymer
      */
-    class UnityelementdevApp extends Polymer.Element {
-      static get is() { return 'unityelementdev-app'; }
+    class UnityPlayer extends Polymer.Element {
+      static get is() { return 'unity-player'; }
 
       static get properties() {
         return {
           unityContent: {
             type: String,
-            value: 'unityelementdev-app'
+            value: 'unity-player'
             
             
           }
@@ -42,6 +42,6 @@
       }
     }
 
-    window.customElements.define(UnityelementdevApp.is, UnityelementdevApp);
+    window.customElements.define(UnityPlayer.is, UnityPlayer);
   </script>
 </dom-module>
